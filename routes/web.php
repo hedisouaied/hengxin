@@ -16,95 +16,96 @@ use Illuminate\Support\Facades\Route;
 
 /* Middleware for minifing html */
 
-// Route::middleware(['HtmlMinifier'])->group(static function () {});
-
-/* Middleware for minifing html */
+Route::middleware(['HtmlMinifier'])->group(static function () {
 
 
-
-/* Frontend section */
-
-Route::get('/', [App\Http\Controllers\Frontend\IndexController::class, 'home'])->name('home');
-
-
-// Product Category
-Route::get('ville/{slug}/', [App\Http\Controllers\Frontend\IndexController::class, 'productCategory'])->name('local.ville');
-
-// Tous Locaux
-Route::get('locaux/', [App\Http\Controllers\Frontend\IndexController::class, 'tousLocaux'])->name('tous.locaux');
-
-Route::post('locaux/{slug}/child', [\App\Http\Controllers\CategoryContoller::class, 'getChildByParentSlug']);
-
-
-// Tous Locaux à vendre
-Route::get('vendre/', [App\Http\Controllers\Frontend\IndexController::class, 'vendreLocaux'])->name('vendre.locaux');
-
-Route::post('vendre/{slug}/child', [\App\Http\Controllers\CategoryContoller::class, 'getChildByParentSlug']);
-
-// Tous Locaux à louer
-Route::get('louer/', [App\Http\Controllers\Frontend\IndexController::class, 'louerLocaux'])->name('louer.locaux');
-
-Route::post('vendre/{slug}/child', [\App\Http\Controllers\CategoryContoller::class, 'getChildByParentSlug']);
+    /* Middleware for minifing html */
 
 
 
-// Product Detail
+    /* Frontend section */
 
-Route::get('local-detail/{slug}/', [App\Http\Controllers\Frontend\IndexController::class, 'productDetail'])->name('product.detail');
-
-// Blog List
-Route::get('actualite/', [App\Http\Controllers\Frontend\IndexController::class, 'actualiteList'])->name('blog.list');
-
-// blog Detail
-
-Route::get('blog-detail/{slug}/', [App\Http\Controllers\Frontend\IndexController::class, 'blogDetail'])->name('blog.detail');
+    Route::get('/', [App\Http\Controllers\Frontend\IndexController::class, 'home'])->name('home');
 
 
-// Ma selection
-Route::post('add-to-cart', [App\Http\Controllers\Frontend\CartController::class, 'addtocart'])->name('addtocart.status');
-//Load selection
-Route::get('load-cart-data', [App\Http\Controllers\Frontend\CartController::class, 'cartloadbyajax'])->name('loadtocart.status');
+    // Product Category
+    Route::get('ville/{slug}/', [App\Http\Controllers\Frontend\IndexController::class, 'productCategory'])->name('local.ville');
 
-// Liste Sélection
-Route::get('selection', [App\Http\Controllers\Frontend\CartController::class, 'index'])->name('maselection.status');
-// Supprimer Sélection
-Route::get('delete-from-selection', [App\Http\Controllers\Frontend\CartController::class, 'deletefromselection'])->name('deleteselection.status');
+    // Tous Locaux
+    Route::get('locaux/', [App\Http\Controllers\Frontend\IndexController::class, 'tousLocaux'])->name('tous.locaux');
 
-// About Us
-Route::get('a-propos', [App\Http\Controllers\Frontend\IndexController::class, 'aboutUs'])->name('about.us');
-
-// Contact Us
-Route::get('contact', [App\Http\Controllers\Frontend\IndexController::class, 'contactUs'])->name('contact.us');
-Route::post('contact-submit', [App\Http\Controllers\Frontend\IndexController::class, 'contactSubmit'])->name('contact.submit');
-
-// Request a Quote (devis)
-//Route::get('devis', [App\Http\Controllers\Frontend\IndexController::class, 'contactUs'])->name('contact.us');
-Route::post('devis-submit', [App\Http\Controllers\Frontend\IndexController::class, 'devisSubmit'])->name('devis.submit');
+    Route::post('locaux/{slug}/child', [\App\Http\Controllers\CategoryContoller::class, 'getChildByParentSlug']);
 
 
-// News letter
+    // Tous Locaux à vendre
+    Route::get('vendre/', [App\Http\Controllers\Frontend\IndexController::class, 'vendreLocaux'])->name('vendre.locaux');
 
+    Route::post('vendre/{slug}/child', [\App\Http\Controllers\CategoryContoller::class, 'getChildByParentSlug']);
 
-Route::post('add-to-news', [App\Http\Controllers\Frontend\NewsLetterController::class, 'addtonews'])->name('addtonews.status');
+    // Tous Locaux à louer
+    Route::get('louer/', [App\Http\Controllers\Frontend\IndexController::class, 'louerLocaux'])->name('louer.locaux');
+
+    Route::post('vendre/{slug}/child', [\App\Http\Controllers\CategoryContoller::class, 'getChildByParentSlug']);
 
 
 
+    // Product Detail
+
+    Route::get('local-detail/{slug}/', [App\Http\Controllers\Frontend\IndexController::class, 'productDetail'])->name('product.detail');
+
+    // Blog List
+    Route::get('actualite/', [App\Http\Controllers\Frontend\IndexController::class, 'actualiteList'])->name('blog.list');
+
+    // blog Detail
+
+    Route::get('blog-detail/{slug}/', [App\Http\Controllers\Frontend\IndexController::class, 'blogDetail'])->name('blog.detail');
 
 
-// authentication
+    // Ma selection
+    Route::post('add-to-cart', [App\Http\Controllers\Frontend\CartController::class, 'addtocart'])->name('addtocart.status');
+    //Load selection
+    Route::get('load-cart-data', [App\Http\Controllers\Frontend\CartController::class, 'cartloadbyajax'])->name('loadtocart.status');
 
-Route::get('user/auth', [App\Http\Controllers\Frontend\IndexController::class, 'userAuth'])->name('user.auth');
+    // Liste Sélection
+    Route::get('selection', [App\Http\Controllers\Frontend\CartController::class, 'index'])->name('maselection.status');
+    // Supprimer Sélection
+    Route::get('delete-from-selection', [App\Http\Controllers\Frontend\CartController::class, 'deletefromselection'])->name('deleteselection.status');
 
-Route::post('user/login', [App\Http\Controllers\Frontend\IndexController::class, 'loginSubmit'])->name('login.submit');
+    // About Us
+    Route::get('a-propos', [App\Http\Controllers\Frontend\IndexController::class, 'aboutUs'])->name('about.us');
 
-Route::post('user/register', [App\Http\Controllers\Frontend\IndexController::class, 'registerSubmit'])->name('register.submit');
+    // Contact Us
+    Route::get('contact', [App\Http\Controllers\Frontend\IndexController::class, 'contactUs'])->name('contact.us');
+    Route::post('contact-submit', [App\Http\Controllers\Frontend\IndexController::class, 'contactSubmit'])->name('contact.submit');
 
-Route::get('user/logout', [App\Http\Controllers\Frontend\IndexController::class, 'userLogout'])->name('user.logout');
+    // Request a Quote (devis)
+    //Route::get('devis', [App\Http\Controllers\Frontend\IndexController::class, 'contactUs'])->name('contact.us');
+    Route::post('devis-submit', [App\Http\Controllers\Frontend\IndexController::class, 'devisSubmit'])->name('devis.submit');
+
+
+    // News letter
+
+
+    Route::post('add-to-news', [App\Http\Controllers\Frontend\NewsLetterController::class, 'addtonews'])->name('addtonews.status');
 
 
 
-/* End Frontend section */
 
+
+    // authentication
+
+    Route::get('user/auth', [App\Http\Controllers\Frontend\IndexController::class, 'userAuth'])->name('user.auth');
+
+    Route::post('user/login', [App\Http\Controllers\Frontend\IndexController::class, 'loginSubmit'])->name('login.submit');
+
+    Route::post('user/register', [App\Http\Controllers\Frontend\IndexController::class, 'registerSubmit'])->name('register.submit');
+
+    Route::get('user/logout', [App\Http\Controllers\Frontend\IndexController::class, 'userLogout'])->name('user.logout');
+
+
+
+    /* End Frontend section */
+});
 /**************************************************************************************************************/
 Auth::routes(['register' => false]);
 
