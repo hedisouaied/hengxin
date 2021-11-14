@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 /* Middleware for minifing html */
 
+// Route::middleware(['HtmlMinifier'])->group(static function () {});
+
+/* Middleware for minifing html */
+
+
 
 /* Frontend section */
 
@@ -99,6 +104,7 @@ Route::get('user/logout', [App\Http\Controllers\Frontend\IndexController::class,
 
 
 /* End Frontend section */
+
 /**************************************************************************************************************/
 Auth::routes(['register' => false]);
 
