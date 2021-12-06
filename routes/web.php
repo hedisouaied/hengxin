@@ -182,16 +182,3 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'admin'], function ()
     Route::resource('user', App\Http\Controllers\UserController::class);
     Route::post('user_status', [\App\Http\Controllers\UserController::class, 'userStatus'])->name('user.status');
 });
-
-Route::group(['prefix' => 'seller', 'middleware' => 'auth', 'seller'], function () {
-    Route::get('/', [App\Http\Controllers\AdminController::class, 'admin'])->name('seller');
-});
-
-// User Dashboard
-
-Route::group(['prefix' => 'user'], function () {
-    Route::get('/dashboard', [App\Http\Controllers\Frontend\IndexController::class, 'userDashboard'])->name('user.dashboard');
-    Route::get('/order', [App\Http\Controllers\Frontend\IndexController::class, 'userOrder'])->name('user.order');
-    Route::get('/address', [App\Http\Controllers\Frontend\IndexController::class, 'userAddress'])->name('user.address');
-    Route::get('/account-detail', [App\Http\Controllers\Frontend\IndexController::class, 'userAccount'])->name('user.account');
-});
