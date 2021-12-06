@@ -7,13 +7,13 @@
         <section class="contact-us" style="padding-top: 10rem;">
             <div class="container">
                 <div class="property-location mb-5">
-                    <h3>Our Location</h3>
+                    <h3>Notre emplacement</h3>
                     <div class="divider-fade"></div>
                     <div id="map-contact" class="contact-map"></div>
                 </div>
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
-                        <h3 class="mb-4">Contact Us</h3>
+                        <h3 class="mb-4">Contactez-nous</h3>
                         <form class="contact-form" name="contactform" method="post" action="{{route('contact.submit')}}">
                             @csrf
 
@@ -52,7 +52,7 @@
                                 <textarea class="form-control textarea-custom input-full" id="ccomment" name="content" required rows="8" placeholder="Message">{{old('content')}}</textarea>
 
                             </div>
-                            <button type="submit" id="submit-contact" class="btn btn-primary btn-lg">Submit</button>
+                            <button type="submit" id="submit-contact" class="btn btn-primary btn-lg">Envoyer</button>
                         </form>
                     </div>
                     <div class="col-lg-4 col-md-12 bgc">

@@ -25,7 +25,21 @@
                                                     @endif,{{$product->address}}
                                                 </a>
                                             </div>
+
+
                                         </div>
+                                            <div class="a2a_kit a2a_kit_size_32 a2a_default_style mt-3">
+                                            <p>Partager sur: </p>
+                                            <a class="a2a_button_facebook"></a>
+                                            <a class="a2a_button_linkedin"></a>
+                                            <a class="a2a_button_twitter"></a>
+                                            </div>
+                                            <script>
+                                            var a2a_config = a2a_config || {};
+                                            a2a_config.locale = "fr";
+                                            a2a_config.num_services = 4;
+                                            </script>
+                                            <script async src="https://static.addtoany.com/menu/page.js"></script>
                                     </div>
                                     <div class="single detail-wrapper mr-2">
                                         <div class="detail-wrapper-body">
@@ -219,24 +233,25 @@
                 <aside class="col-lg-4 col-md-12 car">
                     <div class="single widget">
                         <!-- Start: Schedule a Tour -->
+
                         <div class="schedule widget-boxed mt-33 mt-0">
                             <div>
-                                <h4><i class="fa fa-calendar pr-3 padd-r-10"></i>Demande informations</h4>
+                                <h4><i class="fa fa-calendar pr-3 padd-r-10"></i>Demande d'informations</h4>
                             </div>
                             <div class="widget-boxed-body">
                                 <div class="agent-contact-form-sidebar">
                                     <form name="contact_form" method="post" action="{{route('devis.submit')}}">
                                         @csrf
                                         <input type="hidden" name="nom_local" value="{{$product->title}}" >
-                                        <input type="text" id="fname" name="name" value="{{old('name')}}" placeholder="Full Name" required />
+                                        <input type="text" id="fname" name="name" value="{{old('name')}}" placeholder="Nom et Prénom" required />
                                         @error('name')
                                             <p class="text-danger">{{$message}}</p>
                                         @enderror
-                                        <input type="number" id="pnumber" value="{{old('phone')}}" name="phone" placeholder="Phone Number" required />
+                                        <input type="number" id="pnumber" value="{{old('phone')}}" name="phone" placeholder="Numéro de téléphone" required />
                                         @error('phone')
                                             <p class="text-danger">{{$message}}</p>
                                         @enderror
-                                        <input type="email" id="emailid" name="email" placeholder="Email Address" value="{{old('email')}}" required />
+                                        <input type="email" id="emailid" name="email" placeholder="Adresse Email" value="{{old('email')}}" required />
                                         @error('email')
                                             <p class="text-danger">{{$message}}</p>
                                         @enderror
@@ -244,6 +259,7 @@
                                         @error('content')
                                             <p class="text-danger">{{$message}}</p>
                                         @enderror
+                                        <p> Fixez un Rendez-vous:</p>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-12 book">
                                                 <input type="text" id="reservation-date" data-lang="fr" data-large-mode="true" data-dd-opt-format="y-mm-dd" data-min-year="2017" data-max-year="2040" data-id="datedropper-0" data-theme="my-style" class="form-control" name="date_d" value="{{old('date_d')}}" readonly="">
@@ -310,7 +326,7 @@
                                 </div>
                                 <div class="widget-boxed mt-5">
                                     <div class="widget-boxed-header">
-                                        <h4>Dérniers Annonces</h4>
+                                        <h4>Dérnieres Annonces</h4>
                                     </div>
                                     <div class="widget-boxed-body">
                                         <div class="recent-post">

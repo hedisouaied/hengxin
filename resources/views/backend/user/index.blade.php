@@ -47,7 +47,7 @@
 
                 <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td><img src="{{$item->photo}}" alt="{{$item->title}}" style="width:100px;border-radius:50%;" /></td>
+                    <td><img src="{{$item->photo}}" alt="{{$item->title}}" style="width:100px;border-radius:50%;object-fit: cover;height: 100px;" /></td>
                     <td>{{$item->full_name}}</td>
                     <td>{{$item->email}}</td>
                     <td>
@@ -77,7 +77,7 @@
                         @endphp
                             <div class="modal-content">
                                 <div class="text-center">
-                                    <img src="{{$user->photo}}" alt="{{$user->full_name}}" style="border-radius: 50%;margin: 6% 0;">
+                                    <img src="{{$user->photo}}" alt="{{$user->full_name}}" style="border-radius: 50%;margin: 6% 0;object-fit: cover;height: 152px;width: 25%;">
                                 </div>
                                 <div class="modal-header">
                                 <h5 class="modal-title text-center" id="exampleModalLongTitle">{{$user->full_name}}</h5>

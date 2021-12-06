@@ -54,7 +54,7 @@
                             <div class="m-t-20">
                                 <label for="exampleInputEmail1">Description</label>
 
-                                <textarea name="content" class="form-control" maxlength="225" rows="2" placeholder="Text....">{{$about->content}}</textarea>
+                                <textarea name="content" class="form-control" id="description" placeholder="Text....">{{$about->content}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Video</label>
@@ -123,4 +123,9 @@
 <script>
     $('#lfm').filemanager('image');
 </script>
+<script>
+    $(document).ready(function() {
+        $('#description').summernote();
+    });
+  </script>
 @endsection

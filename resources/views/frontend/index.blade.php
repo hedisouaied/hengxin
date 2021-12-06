@@ -528,7 +528,7 @@ background-size: cover;background-attachment: fixed !important;width: 100%;heigh
     <div class="container">
         <div class="sec-title">
             <h2><span>Notre </span>équipe</h2>
-            <p>Nous offrons un service complet à chaque étape.</p>
+            <p>Nous réunissons nos compétences pour vous proposer les meilleurs biens.</p>
         </div>
         <div class="row team-all">
             @foreach ($team as $item)
@@ -566,7 +566,7 @@ background-size: cover;background-attachment: fixed !important;width: 100%;heigh
 @section('scripts')
 <script>
     var typed = new Typed('.typed', {
-        strings: ["{{$banners[0]->title}} ^2000"],
+        strings: ["{{$banners[0]->title}} ^2000","欢迎来到恒信 ^2000"],
         smartBackspace: false,
         loop: true,
         showCursor: true,

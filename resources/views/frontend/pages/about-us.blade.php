@@ -10,7 +10,7 @@
                     <h2 class="text-left mb-4">A-propos <span>{{$about->heading}}</span></h2>
                 </div>
                 <div class="pftext">
-                    <p>{{$about->content}}</p>
+                    <p>{!!$about->content!!}</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-xs-12">
@@ -150,7 +150,7 @@
     <div class="container">
         <div class="sec-title">
             <h2><span>Notre </span>équipe</h2>
-            <p>Nous offrons un service complet à chaque étape.</p>
+            <p>Nous réunissons nos compétences pour vous proposer les meilleurs biens.</p>
         </div>
         <div class="row team-all">
             @foreach ($team as $item)

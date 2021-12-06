@@ -24,6 +24,18 @@
                                     @endphp &nbsp;</span>
 
                                 </div>
+                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style mt-3">
+                                    <p>Partager sur: </p>
+                                    <a class="a2a_button_facebook"></a>
+                                    <a class="a2a_button_linkedin"></a>
+                                    <a class="a2a_button_twitter"></a>
+                                    </div>
+                                    <script>
+                                    var a2a_config = a2a_config || {};
+                                    a2a_config.locale = "fr";
+                                    a2a_config.num_services = 4;
+                                    </script>
+                                    <script async src="https://static.addtoany.com/menu/page.js"></script>
                                 <div class="news-item-descr big-news details visib mb-0" style="height: auto!important;">
                                     <p class="mb-3">{!!$blog->description!!}</p>
                                 </div>

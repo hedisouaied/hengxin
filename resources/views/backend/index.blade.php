@@ -57,7 +57,7 @@
 		<div class="row small-spacing">
 			<div class="col-lg-12 col-xs-12">
 				<div class="box-content">
-					<h4 class="box-title">Last Reviews</h4>
+					<h4 class="box-title">Dérnier Témoignage</h4>
 					<div class="review-list">
                         @foreach (\App\Models\Feedback::where('status','active')->orderby('id', 'DESC')->limit(5)->get() as $rev)
 						<div class="review-item">

@@ -8,7 +8,7 @@
                         <a href="{{route('home')}}" class="logo">
                             <img style="width: 40%" src="{{asset('frontend/images/logo-hengxin-white.svg')}}" alt="netcom">
                         </a>
-                        <p>{{get_setting('content')}}</p>
+                        <p>{{filter_var(substr(get_setting('content'),0,95),FILTER_SANITIZE_STRING)}}...</p>
                     </div>
                     <div class="contactus">
                         <ul>
