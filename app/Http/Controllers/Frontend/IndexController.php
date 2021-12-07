@@ -572,7 +572,7 @@ class IndexController extends Controller
         ModelsContact::create($data);
 
         Mail::send('mail/contact', $data, function ($message) use ($data) {
-            $message->to("hawemiyassine1@gmail.com")
+            $message->to(get_setting('email'))
                 ->from($data['email'])->subject($data['subject']);
         });
 
@@ -599,7 +599,7 @@ class IndexController extends Controller
 
 
         Mail::send('mail/devis', $data, function ($message) use ($data) {
-            $message->to("hawemiyassine1@gmail.com")
+            $message->to(get_setting('email'))
                 ->from($data['email'])->subject("Demande de devis de " . $data['name']);
         });
 

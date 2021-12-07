@@ -107,7 +107,7 @@ Route::middleware(['HtmlMinifier'])->group(static function () {
     /* End Frontend section */
 });
 /**************************************************************************************************************/
-Auth::routes(['register' => false]);
+//Auth::routes(['register' => false]);
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
