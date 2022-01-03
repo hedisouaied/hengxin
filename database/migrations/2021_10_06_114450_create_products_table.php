@@ -26,7 +26,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('cat_id');
             $table->unsignedBigInteger('child_cat_id')->nullable();
             $table->longText('photo');
-            $table->string('price')->default("0");
+            $table->integer('price')->default("0");
             $table->enum('conditions', ['sale', 'rent']);
             $table->enum('fond', ['fdc', 'dab', 'mc', 'lp']);
             $table->enum('status', ['active', 'inactive'])->default('active');
