@@ -74,6 +74,7 @@
   <script type="text/javascript" src="frontend/css/selectivizr.js"></script>
   <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
 <![endif]-->
+<!--[if lt IE 9]><script src="/theme/_siteNY2010.eylaucom/js/css3-mediaqueries.min.js"></script><![endif]-->
 
 
     @yield('styles')
