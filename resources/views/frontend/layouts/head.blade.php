@@ -70,6 +70,10 @@
     <link rel="stylesheet" href="{{asset('frontend/css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/video.css')}}">
     <link rel="stylesheet" id="color" href="{{asset('frontend/css/colors/dark-orange.css')}}">
+    <!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="frontend/css/selectivizr.js"></script>
+  <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
+<![endif]-->
 
 
     @yield('styles')

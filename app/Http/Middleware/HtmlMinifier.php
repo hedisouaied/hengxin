@@ -34,11 +34,13 @@ class HtmlMinifier
         $search = [
             '/\>\s+/s',
             '/\s+</s',
+            '/\<\!--.*?-->/',
         ];
 
         $replace = [
             '> ',
             ' <',
+            "",
         ];
 
         return preg_replace($search, $replace, $input);
